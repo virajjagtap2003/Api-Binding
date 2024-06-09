@@ -18,20 +18,16 @@ class MainApp extends StatelessWidget {
               postEmployeeData();
             }, 
             
-            child: const Text("put Data")),
+            child: const Text("Delete Data")),
         ),
       ),
     );
   }
   void postEmployeeData()async{
-    Uri url=Uri.parse("https://dummy.restapiexample.com/api/v1/update/21");
-    Map<String,String> mapData={
-      'name':'viraj',
-      'salary':'25000',
-      'age':'20',
-    };
+    Uri url=Uri.parse("https://dummy.restapiexample.com/api/v1/delete/2");
+   
 
-    http.Response responce= await http.put(url,body:mapData);
+    http.Response responce= await http.delete(url);
     log(responce.body);
   }
 }
